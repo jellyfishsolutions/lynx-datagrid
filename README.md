@@ -19,14 +19,14 @@ Once the setup of the instance is done, it is necessary to invoke the `fetchData
 let datagrid = new Datagrid<Person>("d0-", req);
 
 await datagrid.fetchData((params) =>
-    Person.findAndCount({ take: params.take, skip: params.skip, orderBy: params.orderBy })
+    Person.findAndCount({ take: params.take, skip: params.skip, order: params.order })
 );
 ```
 
 The `executor` callback is invoke with a `param` argument, which contains the following properties:
 * `take`: the number of elements to be displayed in the page;
 * `skip`: the number of elements to be skipped;
-* `orderBy`: an object containing the name of the property by which the data needs to be ordered; the value of this property can be `'ASC'` or `'DESC'`.
+* `order`: an object containing the name of the property by which the data needs to be ordered; the value of this property can be `'ASC'` or `'DESC'`.
 
 This parameters can be directly used in the `findAndCount` method defined by TypeORM.
 

@@ -13,7 +13,7 @@ export enum OrderType {
 }
 
 export interface ExecutorParameter {
-  orderBy: any;
+  order: any;
   take: number;
   skip: number;
 }
@@ -78,6 +78,13 @@ export default class Datagrid<T> {
   }
 
   /**
+   * the length of the total data used by the datagrid
+   */
+  public get length(): number {
+    return this.pagination.total;
+  }
+
+  /**
    * Set the current page size, overriding user request and defaults
    * @param size the number of element to display in a single page
    */
@@ -126,14 +133,14 @@ export default class Datagrid<T> {
    * @param executor the function to retrieve the correct data
    */
   public async fetchData(
-    executor: (params: ExecutorParameter) => Promise<[number, T[]]>
+    executor: (params: ExecutorParameter) => Promise<[T[], number]>
   ): Promise<void> {
     let params = {
-      orderBy: this.orderBy,
+      order: this.orderBy,
       take: this.pagination.pageSize,
       skip: this.pagination.currentPage * this.pagination.pageSize,
     };
-    let [total, data] = await executor(params);
+    let [data, total] = await executor(params);
 
     this.pagination.total = total;
     this.pagination.calculate();

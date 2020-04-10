@@ -1,6 +1,6 @@
 {
     "name": "lynx-datagrid",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "description": "APIs to display grid and table data",
     "main": "dist/index.js",
     "scripts": {

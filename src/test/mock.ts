@@ -19,10 +19,10 @@ export class Person {
         });
     }
 
-    static async findAndCount(options: any): Promise<[number, Person[]]> {
+    static async findAndCount(options: any): Promise<[Person[], number]> {
         return new Promise((res) => {
             let selected = allData.slice(options.skip, options.skip+options.take);
-            res([allData.length, selected as any]);
+            res([selected as any, allData.length]);
         });
 
     }
