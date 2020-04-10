@@ -1,0 +1,50 @@
+{% import resolvePath('/datagrid/utility') as dgUtils %}
+
+<style>
+.fas {
+    width: 10px;
+    height: 10px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.fa-sort-amount-up {
+    background: red;
+}
+.fa-sort-amount-down {
+    background: green;
+}
+</style>
+
+<h1>First datagrid:</h1>
+<table>
+    <tr>
+        <td> {{ dgUtils.orderableHeader('Id', 'id', datagrid) }}  </td>
+        <td> {{ dgUtils.orderableHeader('First Name', 'first_name', datagrid) }}  </td>
+        <td> {{ dgUtils.orderableHeader('Salary', 'salary', datagrid) }}  </td>
+    </tr>
+    {% for line in datagrid.data %}
+        <tr>
+            <td>{{line.id}}</td>
+            <td>{{line.first_name}}</td>
+            <td>{{line.salary}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{{ dgUtils.pagination(datagrid) }}
+
+<h1>Second datagrid</h1>
+<table>
+    <tr>
+        <td> {{ dgUtils.orderableHeader('Id', 'id', second) }}  </td>
+        <td> {{ dgUtils.orderableHeader('First Name', 'first_name', second) }}  </td>
+        <td> {{ dgUtils.orderableHeader('Salary', 'salary', second) }}  </td>
+    </tr>
+    {% for line in second.data %}
+        <tr>
+            <td>{{line.id}}</td>
+            <td>{{line.first_name}}</td>
+            <td>{{line.salary}}</td>
+        </tr>
+    {% endfor %}
+</table>
+{{ dgUtils.pagination(second) }}

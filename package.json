@@ -1,0 +1,37 @@
+{
+    "name": "lynx-datagrid",
+    "version": "0.1.0",
+    "description": "APIs to display grid and table data",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "gulp build",
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "prepublishOnly": "npm run build",
+        "postinstall": "mv dist/* ."
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/jellyfishsolutions/lynx-datagrid.git"
+    },
+    "keywords": [
+        "lynx",
+        "admin-ui",
+        "module"
+    ],
+    "author": "Luca Roverelli <luca.roverelli@gmail.com>",
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/jellyfishsolutions/lynx-datagrid/issues"
+    },
+    "homepage": "https://github.com/jellyfishsolutions/lynx-datagrid#readme",
+    "dependencies": {
+        "lynx-framework": "^1.0.9"
+    },
+    "devDependencies": {
+        "del": "^5.1.0",
+        "gulp": "^4.0.2",
+        "gulp-typescript": "^5.0.1",
+        "merge2": "^1.3.0",
+        "typescript": "^3.7.5"
+    }
+}
