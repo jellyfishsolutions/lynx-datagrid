@@ -2,7 +2,7 @@
     {% if (datagrid.pagination.pageCount > 1) %}
         <ul class="pagination">
             <li class="page-item">
-                <a class="page-link" href="{{datagrid.urlNoPag}}{{datagrid.prefix}}page=1">&laquo;</a>
+                <a class="page-link" href="{{datagrid.urlNoPage}}{{datagrid.prefix}}page=1">&laquo;</a>
             </li>
             {% for i in range(datagrid.pagination.left, datagrid.pagination.right) %}
                 {% if i == datagrid.pagination.currentPage %}

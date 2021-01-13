@@ -1,6 +1,6 @@
 {
     "name": "lynx-datagrid",
-    "version": "0.1.2",
+    "version": "0.1.4",
     "description": "APIs to display grid and table data",
     "main": "dist/index.js",
     "scripts": {
@@ -25,13 +25,22 @@
     },
     "homepage": "https://github.com/jellyfishsolutions/lynx-datagrid#readme",
     "dependencies": {
-        "lynx-framework": "^1.0.9"
+        "lynx-framework": "1.x"
     },
     "devDependencies": {
-        "del": "^5.1.0",
+        "del": "^6.0.0",
         "gulp": "^4.0.2",
+        "gulp-jsdoc3": "^3.0.0",
         "gulp-typescript": "^5.0.1",
-        "merge2": "^1.3.0",
-        "typescript": "^3.7.5"
+        "gulp-sourcemaps": "^3.0.0",
+        "merge2": "^1.4.1",
+        "path": "^0.12.7",
+        "typescript": "^4.1.3"
+    },
+    "prettier": {
+        "trailingComma": "es5",
+        "tabWidth": 4,
+        "semi": true,
+        "singleQuote": true
     }
 }
